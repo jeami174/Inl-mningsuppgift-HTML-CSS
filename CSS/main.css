@@ -331,23 +331,6 @@ footer .container {
 
 #section-appfeatures {
 
-    .container {
-        overflow: hidden;
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: 1fr;
-        grid-template-areas:    "h2"
-                                "content"
-                                "container-info";
-        
-        @media (min-width: 1400px) {
-            grid-template-columns: 2fr 4fr;
-            grid-template-areas:    "images h2"
-                                    "images content"
-                                    "images container-info";
-        }
-    }
-
     .h2 {
         grid-area: h2;
         text-align: center;
@@ -356,15 +339,6 @@ footer .container {
             font-size: 28px;
             font-weight: 800;
             color: var(--color-gray-900);
-
-            @media (min-width: 768px) {
-                font-size: 34px ;
-            }
-
-            @media (min-width: 1400px) {
-                font-size: 40px;
-                text-align: left;
-            }
         }
     }
 
@@ -376,40 +350,44 @@ footer .container {
             font-size: 18px;
             color: #585C7B;
             margin-bottom: 3rem;
-    
-            @media (min-width: 1400px) {
-                color: var(--color-gray-600);
-                text-align: left;               
-            }
         }
-
     }
 
     .container-info {
-        grid-area: container-info;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 kolumner */
-        grid-template-rows: auto;
-        gap: 2rem;
-
-        h3 {
-            grid-area: h3;
-            font-size: 20px;
-            color: var(--color-gray-900);
-        }
-
-        p {
-            grid-area: p;
-            font-size: 16px;
-            color: #585C7B;
-        }
 
         .info-box {
             display: grid;
-            grid-template-columns: 2fr 3fr;
-            grid-template-rows: auto auto;
-            grid-template-areas:    "info-icon h3"
-                                    "info-icon p";
+            row-gap: 0.5rem;
+            column-gap: 1rem;
+
+            .info-icon {
+                grid-column: 1;
+                grid-row: 1 / span 2;
+                justify-content: center;
+                align-items: center;
+                background-color:#F3F6FF ;
+                width: fit-content;
+                height: fit-content;
+                padding: 15px;
+                border-radius: 8px;
+            }
+
+            h3 {
+                    grid-column: 2;
+                    font-size: 20px;
+                    font-weight: 800;
+                    color: var(--color-gray-900);
+                    margin: 0;
+                }
+                              
+            p { 
+                    grid-column: 2;    
+                    font-size: 16px;
+                    color: #585C7B;
+                    padding-bottom: 2rem;
+                }
+            
+
         }
     }
 
@@ -521,7 +499,13 @@ footer .container {
     #section-hero .images {
             display: block;
         }
-}
+
+    #section-appfeatures .h2 {
+        h2 {
+            font-size: 34px ;
+            }
+        }
+    }
 
 /*För desktop */
 
@@ -604,6 +588,52 @@ footer .container {
         }
     }
 
-  
-   
+    #section-appfeatures .container {
+        grid-template-columns: 2fr 4fr;
+        grid-template-areas:    "images h2"
+                                "images content"
+                                "images container-info";
+    }
+
+    #section-appfeatures .h2 {
+        h2 {
+                font-size: 40px;
+                text-align: left;
+            }
+        }
+
+    #section-appfeatures .content {
+        p {
+            color: var(--color-gray-600);
+            text-align: left;               
+        }
+    }
 }
+    
+/*   .container-info {
+    grid-area: container-info;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolumner
+    grid-template-rows: auto;
+    gap: 2rem;
+
+    h3 {
+        grid-area: h3;
+        font-size: 20px;
+        color: var(--color-gray-900);
+    }
+
+    p {
+        grid-area: p;
+        font-size: 16px;
+        color: #585C7B;
+    }
+
+    .info-box {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:    "info-icon h3"
+                                "info-icon p";
+    }
+} /*
