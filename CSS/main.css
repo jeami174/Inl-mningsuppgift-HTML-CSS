@@ -343,7 +343,6 @@ footer .container {
     }
 
     .content {
-        grid-area: content;
         text-align: center;
         
         p {
@@ -505,6 +504,13 @@ footer .container {
             font-size: 34px ;
             }
         }
+
+    #section-appfeatures .container-info {
+            display: grid;
+            grid-template-columns: auto auto;
+            margin-bottom: 5rem;
+    }
+
     }
 
 /*För desktop */
