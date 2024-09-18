@@ -356,8 +356,10 @@ footer .container {
 
         .info-box {
             display: grid;
+            grid-template-columns: auto 1fr;
             row-gap: 0.5rem;
             column-gap: 1rem;
+            align-items: start;
 
             .info-icon {
                 grid-column: 1;
@@ -373,17 +375,21 @@ footer .container {
 
             h3 {
                     grid-column: 2;
+                    grid-row: 1;
                     font-size: 20px;
                     font-weight: 800;
                     color: var(--color-gray-900);
                     margin: 0;
+                    align-self: start;
                 }
                               
             p { 
-                    grid-column: 2;    
+                    grid-column: 2;
+                    grid-row: 2;
                     font-size: 16px;
                     color: #585C7B;
                     padding-bottom: 2rem;
+                    align-self: start;
                 }
             
 
@@ -396,8 +402,6 @@ footer .container {
         position: relative;
 
             .img-phone { 
-                position: static;
-                z-index: -10;
                 bottom: 0; 
                 left: 0;
                 width: auto;
@@ -405,9 +409,9 @@ footer .container {
             }
 
             .card {
-                z-index: -5;
-                bottom: 500px;
-                left: 0;
+                position: absolute;
+                left: 20px;
+                top: 90px;
                 width: auto;
                 height: auto;
             }
@@ -416,7 +420,7 @@ footer .container {
 
 /* Här börjar mina media-queries */
 
-/*Tablet */
+/*Media-queries för Tablet */
 
 @media (min-width: 768px) {
     .container {
@@ -492,13 +496,15 @@ footer .container {
 
     #section-appfeatures .container-info {
             display: grid;
-            grid-template-columns: auto auto;
+            grid-template-columns: 1fr 1fr;
+            grid-row: auto;
+            column-gap: 2rem;
             margin-bottom: 5rem;
     }
 
     }
 
-/*För desktop */
+/*Media-queries för Desktop */
 
 @media (min-width: 1400px) {
     .container {
@@ -581,9 +587,19 @@ footer .container {
 
     #section-appfeatures .container {
         display: grid;
+        grid-template-columns: 2fr 3fr;
+        margin-bottom: 2rem;
     }
 
+    #section-appfeatures .container-info {
+        grid-column: 2/3;
+        grid-row: 3/4;
+}
+
     #section-appfeatures .h2 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+
         h2 {
                 font-size: 40px;
                 text-align: left;
@@ -591,6 +607,9 @@ footer .container {
         }
 
     #section-appfeatures .content {
+        grid-column: 2/3;
+        grid-row: 2/3;
+
         p {
             color: var(--color-gray-600);
             text-align: left;               
@@ -600,6 +619,6 @@ footer .container {
     #section-appfeatures .images {
         display: block;
         grid-column: 1;
-        grid-row: 1 / span 3;
+        grid-row: 1 / span 4;
     }
 }
