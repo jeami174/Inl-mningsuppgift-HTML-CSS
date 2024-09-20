@@ -418,6 +418,42 @@ footer .container {
     }
 }
 
+#section-subscribe {
+
+    .card {
+        background-color: #F3F6FF;
+        width: 100%;
+    }
+
+    .headline-desktop {
+        display: none;
+    }
+
+    .form-input {
+        font-size: 1rem;
+        padding: 0.6em;
+        border-radius: 0.5em;
+        border: 1px solid #D4D7E5;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 5px #565973 ;
+        }
+    }
+
+    input::placeholder  {
+        font-size: 1rem;
+        color: #B4B7C9;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+}
+
 /* Här börjar mina media-queries */
 
 /*Media-queries för Tablet */
@@ -500,6 +536,11 @@ footer .container {
             grid-row: auto;
             column-gap: 2rem;
             margin-bottom: 5rem;
+    }
+
+    #section-subscribe .card {
+        display: flex;
+        flex-direction: row;
     }
 
     }
