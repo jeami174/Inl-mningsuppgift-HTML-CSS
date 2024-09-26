@@ -17,8 +17,9 @@
     --color-info: #4C82F7;
     --color-white: #FFFFFF;
 
+    --color-bg: var(--color-white);
+    --color-bg-gray: var(--color-gray-100);
 
-    --container-padding: 1rem;
     --transition-time: all 0.2s;
 }
 
@@ -37,8 +38,23 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
+    font-size: 1rem;
 }
+
+img {
+    display: block;
+    width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+/* UTILITY CLASSES */
 
 .wrapper {
     display: grid;
@@ -48,8 +64,8 @@ body {
 
 .container {
     width: 100%;
-    padding-left: var(--container-padding);
-    padding-right: var(--container-padding);
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -63,15 +79,20 @@ a:hover {
     text-decoration: underline;
 }
 
+/* BUTTONS */
+
 .btn-primary {
+    font-size: 0.9rem;
     background-color: var(--color-primary);
     color: var(--color-white);
     border-radius: 0.375em ; /*Väljer 0.375 enligt bootstrap 5 standard, samt em efter Joakims rekommendation */
-    padding: 0.5em 1em; /*Väljer 0.5 och 1.0 enligt standard för bootstrap 5 för stora knappar, samt em efter Joakims rekommendation */
+    border: none;
+    padding: 0.6em 1.8em;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    text-wrap: nowrap;
     gap: 0.5em;
 }
 
@@ -79,10 +100,6 @@ a:hover {
     background-color: hsl(239, 85%, 70%); /*Lägger in ljusvärde 70% så blir knappen lite ljusare om man hovrar över den */
     color: var(--color-white);
     text-decoration: none;
-}
-
-.btn-primary i {
-    margin-right: 0.5rem;
 }
 
 .btn-secondary {
@@ -105,8 +122,12 @@ a:hover {
 
 .btn-mobile {
     background-color: transparent;
-    border: none;
-    font-size: 2rem;
+    border: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 9999;
 }
 
 .btn-cirkel {
@@ -121,22 +142,12 @@ a:hover {
     color: var(--color-gray-500);
 }
 
-/* Koden som jag byggt toggle-switchen med kommer från videon "Tips och Trix bygg din header" med Hans*/
-.btn-toggle-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btn-toggle-switch .label {
-    display: none;
-}
-
 .toggle-switch {
     position: relative;
     display: inline-block;
-    width: 45px;
-    height: 25px;
+    flex-shrink: 0;
+    width: 46px;
+    height: 24px;
 }
 
 .toggle-switch input {
@@ -156,19 +167,19 @@ a:hover {
     transition: var(--transition-time);
 }
 
-.toggle-switch .slider:before {
+.toggle-switch .slider::before {
     position: absolute;
     content: "";
-    height: 20px;
+    height: calc(100% - 4px);
     width: 20px;
-    left: 3px;
-    bottom: 2.5px;
+    left: 2px;
+    bottom: 2px;
     background-color: var(--color-white);
     transition: var(--transition-time);
 }
 
 .toggle-switch .slider.round {
-    border-radius: 35px;
+    border-radius: 100vw;
 }
 
 .toggle-switch .slider.round:before {
@@ -180,23 +191,8 @@ a:hover {
 }
 
 .toggle-switch input:checked + .slider:before {
-    transform: translateX(18px);
+    transform: translateX(22px);
     background-color: var(--color-white);
-}
-
-.navbar {
-    display: none;
-}
-
-.nav-link {
-    color: var(--color-gray-800);
-    text-decoration: none;
-    font-weight: 600; /*Font-weight 600 motsvarar semibold, vilket är det som anges i designfilen */
-}
-
-.nav-link:hover {
-    color: var(--color-primary);
-    text-decoration: underline;
 }
 
 .active {
@@ -204,24 +200,131 @@ a:hover {
     text-decoration: underline;
 }
 
-#sign-in {
-    display: none;
+/* NAVBAR START */
+
+.main-nav {
+    padding-block: 1rem;
+    position: relative;
+    
+.container {
+    position: relative;
 }
 
-header .container {
-    display: grid;
+.container,
+.main-menu {
+    display: flex;
     align-items: center;
-    grid-template-columns: 1fr auto auto;
-    gap: 1.5rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
+
+.btn-mobile {
+    display: none;
+    background-color: transparent;
+    border: 0;
+    padding: 0.5rem;
+    padding-right: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 9999;
+}
+
+.main-menu {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 3rem;
+}
+
+.nav-link {
+    color: var(--color-gray-800);
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+}
+
+.btn-toggle-switch {
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    right: 12rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10000;
+
+    p {
+        color: var(--color-gray-700);
+        font-weight: 600;
+    }
+}
+
+@media (width <= 992px) {
+    .btn-mobile {
+        display: block;
+    }
+
+    .container {
+        position: static;
+    }
+
+    .btn-toggle-switch {
+        right: 8rem;
+    }
+
+    .main-menu {
+        position: absolute;
+        top:100%;
+        right: 0;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        padding-block: 2rem;
+        box-shadow: 0 5px 5px #B4B7C9;
+        background-color: var(--color-bg);
+        z-index: 1000;
+    }
+    .nav-link {
+        display: inline-block;
+        padding: 1rem;
+    }
+
+    .hide {
+        display: none;
+    }
+    .btn-mobile[aria-expanded="true"] ~ .main-menu {
+        animation: openMenu 250ms forwards
+    }
+    .btn-mobile[aria-expanded="false"] ~ .main-menu {
+        animation: closeMenu 250ms forwards
+    }
+
+
+}
+
+@media (width < 540px) {
+    .btn-toggle-switch {
+        right: 4rem;
+
+        p {
+            display: none;
+        }
+    }
+
+}
+
+}
+
+/* NAVBAR END */
+
 
 footer {
     font-size: 14px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: var(--color-gray-600)
+    color: var(--color-bg-gray);
 }
 
 footer .container {
@@ -421,7 +524,7 @@ footer .container {
 #section-subscribe {
 
     .card {
-        background-color: #F3F6FF;
+        background-color: var(--color-bg-gray);
         width: 100%;
     }
 
@@ -455,20 +558,11 @@ footer .container {
 }
 
 /* Här börjar mina media-queries */
-
 /*Media-queries för Tablet */
 
 @media (min-width: 768px) {
     .container {
         max-width: 720px;
-    }
-
-    .btn-toggle-switch .label {
-        display: block;
-    }
-
-    header .container {
-        gap: 3rem;
     }
 
     #section-brands {
@@ -550,23 +644,6 @@ footer .container {
 @media (min-width: 1400px) {
     .container {
         max-width: 1320px;
-    }
-
-    header .container {
-        grid-template-columns: auto 1fr auto auto;
-        gap: 3rem;
-    }
-
-    .navbar {
-        display: block;
-    }
-
-    #sign-in {
-        display: block;
-    }
-
-    .btn-mobile {
-        display: none;
     }
 
     #section-brands {
@@ -661,5 +738,31 @@ footer .container {
         display: block;
         grid-column: 1;
         grid-row: 1 / span 4;
+    }
+}
+
+/* Animations */
+
+@keyframes openMenu {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes closeMenu {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
     }
 }
