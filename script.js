@@ -6,6 +6,9 @@ btnMobile.addEventListener('click', () => {
 
     if(isExpanded) {
         btnMobile.setAttribute('aria-expanded', false)
+        mainMenu.addEventListener('animationend', () => {
+            mainMenu.classList.add('hide')
+        }, { once: true })
     }
     else {
         mainMenu.classList.remove('hide')
