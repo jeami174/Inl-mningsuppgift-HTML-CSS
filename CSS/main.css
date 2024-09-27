@@ -60,6 +60,13 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.h1 {
+    font-size: 2.5rem;
+    color: var(--color-gray-900);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
 ol, ul {
     list-style: none;
 }
@@ -463,6 +470,8 @@ footer .container {
 
 #section-appfeatures {
 
+padding-top: 1rem;
+
     .h2 {
         grid-area: h2;
         text-align: center;
@@ -476,21 +485,22 @@ footer .container {
 
     .content {
         text-align: center;
+        padding-bottom: 3rem;
         
         p {
             font-size: 18px;
             color: #585C7B;
-            margin-bottom: 3rem;
         }
     }
 
     .container-info {
+        padding-bottom: 1rem;
 
         .info-box {
             display: grid;
             grid-template-columns: auto 1fr;
-            row-gap: 0.5rem;
-            column-gap: 1rem;
+            row-gap: 0.75rem;
+            column-gap: 1.5rem;
             align-items: start;
 
             .info-icon {
@@ -521,10 +531,9 @@ footer .container {
                     font-size: 16px;
                     color: #585C7B;
                     padding-bottom: 2rem;
+                    line-height: 1.6;
                     align-self: start;
                 }
-            
-
         }
     }
 
@@ -636,7 +645,7 @@ footer .container {
     #section-brands {
         display: block;
         padding-top: 2.8rem; /*I designfilen är padding 45px i tablet-läget som motsvarar 2.8 rem med 16px fontsize */
-        padding-bottom: 2.8rem;
+        padding-bottom: 1rem;
     }
     
     #section-brands .container {
@@ -668,6 +677,12 @@ footer .container {
             margin-bottom: 5rem;
     }
 
+    #section-appfeatures .info-box {
+        row-gap: 2rem;
+        column-gap: 3rem;
+    }
+
+
     #section-subscribe .card {
         display: flex;
         flex-direction: row;
@@ -680,25 +695,6 @@ footer .container {
 @media (min-width: 1400px) {
     .container {
         max-width: 1320px;
-    }
-
-    #section-brands {
-        padding-bottom: 5.6rem;
-    }
-
-    #section-brands .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        #brand-5 {
-            display: flex;
-        }
-
-        #brand-6 {
-            display: flex;
-        }
-
     }
 
     #section-hero .container { 
@@ -742,16 +738,44 @@ footer .container {
      
     }
 
+    #section-brands {
+        padding-bottom: 5.6rem;
+    }
+
+    #section-brands .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #brand-5 {
+            display: flex;
+        }
+
+        #brand-6 {
+            display: flex;
+        }
+    }
+
+
     #section-appfeatures .container {
         display: grid;
         grid-template-columns: 2fr 3fr;
-        margin-bottom: 2rem;
+        margin-bottom: 6rem;
     }
 
     #section-appfeatures .container-info {
         grid-column: 2/3;
         grid-row: 3/4;
-}
+        column-gap: 3rem;
+        row-gap: 1rem;
+
+        .info-box {
+        
+            h3 {
+                align-self: center;
+            }
+        }
+    }
 
     #section-appfeatures .h2 {
         grid-column: 2/3;
@@ -760,16 +784,19 @@ footer .container {
         h2 {
                 font-size: 40px;
                 text-align: left;
+                margin-bottom: 0;
             }
         }
 
     #section-appfeatures .content {
         grid-column: 2/3;
         grid-row: 2/3;
+        padding-bottom: 4rem;
 
         p {
             color: var(--color-gray-600);
-            text-align: left;               
+            text-align: left;
+            padding-top: 1rem;       
         }
     }
 
