@@ -52,6 +52,14 @@ input, button, textarea, select {
     font: inherit;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    color: var(--color-gray-900);
+    font-weight: 800;
+    line-height: 1.3;
+
+}
+
 ol, ul {
     list-style: none;
 }
@@ -337,7 +345,6 @@ a:hover {
 
     .container {
         overflow: hidden;
-        gap: 1rem;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:    "h1"
@@ -350,8 +357,6 @@ a:hover {
 
         h1 {
             font-size: 34px;
-            font-weight: 800;
-            color: var(--color-gray-900);
         }
 
     }
@@ -373,11 +378,12 @@ a:hover {
             gap: 1rem;
 
             img {
-                height: 3em;
+                height: 2em;
             }
         }
 
         .discover-more {
+            font-size: 14px;
             color: #585C7B;
             text-decoration: none;
             display: flex;
@@ -385,32 +391,29 @@ a:hover {
             justify-content: center;
             gap: 1rem;
             margin-top: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
     }
 
-    .images {
+    .phoneimages {
         position: relative;
         grid-area: images;
         display: none;
+        width: 55%;
+        margin-left: auto;
 
         .img-back {
             position: absolute;
-            z-index: -10;
+            z-index: 998;
             bottom: 0;
-            right: 100px;
-            width: 70%;
-            height: auto;
+            right: 130px;
         }
 
         .img-front {
             position: absolute;
-            z-index: -5;
+            z-index: 999;
             bottom: 0;
-            right: 0;
-            width: 70%;
-            height: auto;
         }
 
     }
@@ -610,8 +613,13 @@ footer .container {
                 }
     }
 
+    #section-hero .phoneimages {
+        display: block;
+    }
+
     #section-hero .container {
-        grid-template-columns: 1fr 1fr;
+        margin-top: 0;
+        grid-template-columns: 2fr 3fr;
         grid-template-areas:    "h1 h1"
                                 "content images";
     }
@@ -619,22 +627,25 @@ footer .container {
     #section-hero .h1 {
         h1 {
             font-size: 44px;
+            padding-bottom: 2rem;
             }
     }
 
     #section-hero .content {
             text-align: left;
+            padding-top: 3rem;
                 .buttons {
                     flex-direction: row;
                 }
                 .discover-more {
                     justify-content: left;
                 }
+
+                p {
+                    font-size: 18px;
+                }
         }
 
-    #section-hero .images {
-            display: block;
-        }
 
     #section-appfeatures .h2 {
         h2 {
@@ -655,7 +666,7 @@ footer .container {
         flex-direction: row;
     }
 
-    }
+}
 
 /*Media-queries för Desktop */
 
@@ -685,14 +696,14 @@ footer .container {
     }
 
     #section-hero .container { 
-            margin-top: 5rem;
-            gap: 0.5rem;
+        margin-top: 8rem;
             grid-template-columns: 2fr 3fr;
             grid-template-areas:    "h1 images"
                                     "content images";                        
     }
 
     #section-hero .content {
+        padding-top: 0;
             .discover-more {
                 margin-top: 10rem;
             }
@@ -703,22 +714,26 @@ footer .container {
         font-size: 56px;
         text-align: left;
         padding-top: 2rem;
+        margin-bottom: 0;
         }
     }
 
-    #section-hero .images {
-        .img-back {
-            width: auto;
-            height: auto;
-            bottom: -50px;
-            right: 230px;
-        }
+    #section-hero .phoneimages {
+     width: 50%;
 
-            .img-front {
-                width: auto;
-                height: auto;
-                bottom: -50px;
-        }
+     .img-back {
+        position: absolute;
+        z-index: 998;
+        bottom: -45px;
+        right: 230px;
+    }
+
+    .img-front {
+        position: absolute;
+        z-index: 999;
+        bottom: -45px;
+    }
+     
     }
 
     #section-appfeatures .container {
