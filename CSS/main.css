@@ -421,6 +421,26 @@ a:hover {
 
 /* SECTION-HERO END */
 
+/* SECTION-BRANDS START */
+
+#section-brands {
+    display: none;
+
+    .brand-box {
+        border: 1px solid var(--color-gray-300);
+        border-radius: 8px;
+        height: 100px;
+        width: 196px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+/* SECTION_BRANDS END */
+
 footer {
     font-size: 14px;
     padding-top: 1rem;
@@ -439,19 +459,7 @@ footer .container {
                 }
 }
 
-#section-brands {
-    display: none;
-}
 
-#section-brands .brand-box {
-    border: 1px solid var(--color-gray-300);
-    border-radius: 8px;
-    height: 100px;
-    width: 196px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 #section-appfeatures {
 
@@ -586,27 +594,6 @@ footer .container {
         max-width: 720px;
     }
 
-    #section-brands {
-        display: block;
-        padding-top: 2.8rem; /*I designfilen är padding 45px i tablet-läget som motsvarar 2.8 rem med 16px fontsize */
-        padding-bottom: 2.8rem;
-    }
-
-    #section-brands .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-
-        #brand-5 {
-            display: none;
-        }
-
-        #brand-6 {
-            display: none;
-        }
-    }
-
     footer .container {   
         .credit {
             display: block;
@@ -646,6 +633,26 @@ footer .container {
                 }
         }
 
+    #section-brands {
+        display: block;
+        padding-top: 2.8rem; /*I designfilen är padding 45px i tablet-läget som motsvarar 2.8 rem med 16px fontsize */
+        padding-bottom: 2.8rem;
+    }
+    
+    #section-brands .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    
+        #brand-5 {
+            display: none;
+        }
+    
+        #brand-6 {
+            display: none;
+        }
+    }
 
     #section-appfeatures .h2 {
         h2 {
@@ -676,7 +683,6 @@ footer .container {
     }
 
     #section-brands {
-        padding-top: 5.6rem; /*I designfilen är padding 90px i desktop-läget som motsvarar 5.6 rem med 16px fontsize */
         padding-bottom: 5.6rem;
     }
 
