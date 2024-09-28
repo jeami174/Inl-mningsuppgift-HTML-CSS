@@ -1,6 +1,7 @@
 const btnMobile = document.querySelector('.btn-mobile')
 const mainMenu = document.querySelector('#main-menu')
 
+
 btnMobile.addEventListener('click', () => {
     const isExpanded = btnMobile.getAttribute('aria-expanded') === 'true'
 
