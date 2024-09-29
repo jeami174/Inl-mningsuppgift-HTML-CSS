@@ -552,6 +552,19 @@ a:hover {
 #section-how-does-it-work {
     text-align: center;
     background-color: var(--color-bg-gray);
+    padding-block: 1rem;
+
+    .workdesktop,
+    .worktablet {
+        display: none;
+    }
+
+    .workimagestablet,
+    .workimagesdesktop {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
 }
 
 /* SECTION HOW DOES IT WORK END */
@@ -698,12 +711,18 @@ footer .container {
         column-gap: 3rem;
     }
 
+    #section-how-does-it-work .workmobile{
+        display: none;
+    }
+
+    #section-how-does-it-work .worktablet {
+        display: block;
+    }
 
     #section-subscribe .card {
         display: flex;
         flex-direction: row;
-    }
-
+    }    
 }
 
 /*Media-queries för Desktop */
@@ -821,6 +840,16 @@ footer .container {
         grid-column: 1;
         grid-row: 1 / span 4;
     }
+
+    #section-how-does-it-work .worktablet {
+        display: none;
+    }
+
+    #section-how-does-it-work .workdesktop {
+        display: block;
+    }
+
+
 }
 
 /* Animations */
