@@ -761,7 +761,8 @@ footer .container {
         }
 
         .content {
-            padding-inline: 8rem;
+            max-width: 50ch;
+            margin-inline: auto;
 
             .h4 {
                 font-size: 23px;
@@ -773,6 +774,7 @@ footer .container {
             }
         }
     }
+
 
     #section-subscribe .card {
         display: flex;
@@ -919,7 +921,6 @@ footer .container {
         }
 
         .content {
-            padding-inline: 20rem;
 
             .h4 {
                 font-size: 24px;
