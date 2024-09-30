@@ -16,6 +16,8 @@
     --color-warning: #FFBA08;
     --color-info: #4C82F7;
     --color-white: #FFFFFF;
+    --color-text-gray: #585C7B;
+    
 
     --color-bg: var(--color-white);
     --color-bg-gray: var(--color-gray-100);
@@ -68,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .h4 {
-    font-size: 1.5rem;
+    font-size: 1.357rem;
     color: var(--color-gray-900);
     font-weight: 800;
     line-height: 1.3;
@@ -379,7 +381,7 @@ a:hover {
         p {
             font-size: 18px;
             line-height: 28.8px;
-            color: #585C7B;
+            color: var(--color-text-gray);
             margin-bottom: 3rem;
         }
 
@@ -395,7 +397,7 @@ a:hover {
 
         .discover-more {
             font-size: 14px;
-            color: #585C7B;
+            color: var(--color-text-gray);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -475,7 +477,7 @@ a:hover {
             
             p {
                 font-size: 18px;
-                color: #585C7B;
+                color: var(--color-text-gray);
             }
         }
     
@@ -515,7 +517,7 @@ a:hover {
                         grid-column: 2;
                         grid-row: 2;
                         font-size: 16px;
-                        color: #585C7B;
+                        color: var(--color-text-gray);
                         padding-bottom: 2rem;
                         line-height: 1.6;
                         align-self: start;
@@ -565,6 +567,30 @@ a:hover {
         justify-content: space-evenly;
     }
 
+    .h1 {
+        padding-top: 1rem;
+        font-weight: 800;
+        font-size: 28px;
+        }
+
+    .workmobile {
+        padding-bottom: 2rem;
+        
+        .workimagesmobile {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        .h4 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--color-text-gray);
+        }
+    }
 }
 
 /* SECTION HOW DOES IT WORK END */
@@ -715,8 +741,37 @@ footer .container {
         display: none;
     }
 
-    #section-how-does-it-work .worktablet {
-        display: block;
+    #section-how-does-it-work {
+        .h1 {
+            padding-top: 1rem;
+            font-weight: 800;
+            font-size: 34px;
+            }
+
+        .worktablet {
+            display: block;
+            padding-bottom: 2rem;
+
+            .workimagestablet {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+        }
+
+        .content {
+            padding-inline: 8rem;
+
+            .h4 {
+                font-size: 23px;
+                margin-bottom: 1rem;
+            }
+    
+            p {
+                color: var(--color-text-gray);
+            }
+        }
     }
 
     #section-subscribe .card {
@@ -845,10 +900,37 @@ footer .container {
         display: none;
     }
 
-    #section-how-does-it-work .workdesktop {
-        display: block;
-    }
+    #section-how-does-it-work {
+        .h1 {
+            padding-top: 1.5rem;
+            font-weight: 800;
+            font-size: 2.5rem;
+            }
 
+        .workdesktop {
+            display: block;
+            padding-bottom: 3rem;
+
+            .workimagesdesktop {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+
+            }
+        }
+
+        .content {
+            padding-inline: 20rem;
+
+            .h4 {
+                font-size: 24px;
+                margin-bottom: 1rem;
+            }
+    
+            p {
+                color: var(--color-text-gray);
+            }
+        }
+    }
 
 }
 
