@@ -16,11 +16,11 @@
             <a href="index.html" aria-label="To Mainpage">
                 <img src="/Images/Logotype.svg" alt="Silicon Logotype">
             </a>
-            <div class="btn-toggle-switch">
-                 <p>Dark Mode</p>
-                <label class="toggle-switch">
-                    <input id="darkmode-switch" type="checkbox">
-                    <span class="slider round"></span>
+            <div class="darkmode-toggle">
+                <p>Dark Mode</p>
+                <label class="toggle" for="darkmode-switch" aria-label="darkmode switch">
+                    <input type="checkbox" id="darkmode-switch">
+                    <span class="slider"></span>
                 </label>
             </div>
             <button class="btn-mobile" aria-controls="main-menu" aria-expanded="false" aria-label="toggle navigation">
@@ -217,10 +217,6 @@
                     </div>
                     <form>
                         <div class="email">
-                            <label class="form-label" for="email"></label>
-                                    <input class="form-input" type="email" name="email" id="email" placeholder="Your email">
-                                    <button class="btn-primary" href="#" aria-label="subscribe for newsletter"></button>
-                                    <img src="/Images/letter.svg" alt="email icon">
                         </div>
                     </form>
                 </div>
