@@ -27,6 +27,7 @@
     --color-navigation: var(--color-gray-800);
     --color-icon-bg: #F3F6FF;
     --color-btn-secondary: var(--color-gray-900);
+    --color-clienttitle: var(--color-gray-600);
     
     --transition-time: all 0.2s;
 }
@@ -40,6 +41,7 @@
     --color-navigation: var(--color-white);
     --color-icon-bg: rgba(99, 101, 241, 0.08);
     --color-btn-secondary: var(--color-gray-100);
+    --color-clienttitle: var(--color-white);
 
     color-scheme:dark;
 
@@ -143,7 +145,7 @@ a:hover {
     font-size: 0.9rem;
     background-color: var(--color-primary);
     color: var(--color-white);
-    border-radius: 0.375em ; /*Väljer 0.375 enligt bootstrap 5 standard, samt em efter Joakims rekommendation */
+    border-radius: 0.375em; /*Väljer 0.375 enligt bootstrap 5 standard, samt em efter Joakims rekommendation */
     border: none;
     padding: 0.6em 1.8em;
     display: flex;
@@ -163,7 +165,7 @@ a:hover {
 .btn-secondary {
     background-color: var(--color-btn-secondary);
     color: var(--color-white);
-    border-radius: 0.5em ; /*Väljer 0.375 enligt bootstrap 5 standard, samt em efter Joakims rekommendation */
+    border-radius: 0.5em;
     padding: 0.5em 1em; /*Väljer 0.5 och 1.0 enligt standard för bootstrap 5 för stora knappar, samt em efter Joakims rekommendation */
     display: flex;
     justify-content: center;
@@ -713,6 +715,84 @@ a:hover {
 }
 
 /* SECTION INFO END */
+
+/* SECTION CLIENTS START */
+
+#section-clients {
+    background-color: var(--color-bg-gray);
+
+    .h2 {
+       
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+        padding-block: 5em;
+    }
+
+    .card {
+        background-color: var(--color-bg);
+        border-radius: 0.5em;
+        position: relative;
+        padding: 1.5rem;
+
+        .quote {
+            background-color: var(--color-primary);
+            position: absolute;
+            padding: 0.75rem;
+            border-radius: 0.375em;
+        }
+
+        p {
+            font-size: 18px;
+            color: var(--color-text-body);
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+
+        .client {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 1rem;
+            align-items: start;
+
+            .client-icon {
+                grid-column: 1;
+                grid-row: 1 / span 2;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h3 {
+                grid-column: 2;
+                grid-row: 1;
+                font-size: 1rem;
+                margin: 0;
+                align-self: start;
+            }
+                          
+            p { 
+                grid-column: 2;
+                grid-row: 2;
+                font-size: 14px;
+                color: var(--color-clienttitle);
+
+            }
+
+            
+        }
+
+                
+    }
+    
+}
+
+/* SECTION CLIENTS END */
+
+
 
 footer {
     font-size: 14px;
