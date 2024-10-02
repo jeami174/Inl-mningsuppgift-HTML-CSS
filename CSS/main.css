@@ -1328,6 +1328,19 @@ footer .container {
     #section-faq {
         .container {
             display: grid;
+            grid-template-columns: 1fr 2fr;
+            column-gap: 7rem;
+            row-gap: 2rem;
+            padding-block: 3rem;
+
+            .accordion {
+                grid-column: 2;
+                grid-row: 1 / span 4;
+            }
+
+            .questions {
+                text-align: left;
+            }
         }
     }
 
