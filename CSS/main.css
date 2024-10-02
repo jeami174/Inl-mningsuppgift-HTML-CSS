@@ -719,6 +719,7 @@ a:hover {
 /* SECTION CLIENTS START */
 
 #section-clients {
+    display: none;
     background-color: var(--color-bg-gray);
 
     .container {
@@ -798,16 +799,33 @@ a:hover {
                 margin: 0;
 
             }
-
-            
-        }
-
-                
+        }        
     }
-    
 }
 
 /* SECTION CLIENTS END */
+
+/* SECTION FAQ START */
+
+#section-faq {
+    padding-top: 3rem;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .contact-card {
+            display: none;
+        }
+
+        .questions {
+            text-align: center;
+        }
+    }
+}
+
+/* SECTION FAQ END */
 
 
 
@@ -1153,6 +1171,17 @@ footer .container {
 
     #section-info {
         display: block;
+    }
+
+    #section-clients {
+        display: block;
+    }
+
+    #section-faq {
+        .container {
+            display: grid;
+            
+        }
     }
 
 }
