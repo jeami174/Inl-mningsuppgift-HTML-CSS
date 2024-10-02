@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
     line-height: 1.3;
 }
@@ -487,7 +487,7 @@ a:hover {
 
 #section-appfeatures {
 
-    padding-top: 1rem;
+    padding-block: 2rem;
     background-color: var(--color-bg);
     
         .h2 {
@@ -584,7 +584,7 @@ a:hover {
 #section-how-does-it-work {
     text-align: center;
     background-color: var(--color-bg-gray);
-    padding-block: 3rem;
+    padding-block: 2rem;
 
     .workdesktop,
     .worktablet {
@@ -808,12 +808,12 @@ a:hover {
 /* SECTION FAQ START */
 
 #section-faq {
-    padding-top: 3rem;
+    padding-block: 2rem;
 
     .container {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+
 
         .contact-card {
             display: none;
@@ -821,6 +821,78 @@ a:hover {
 
         .questions {
             text-align: center;
+
+            p {
+                font-size: 1.125rem;
+                color: var(--color-text-body);
+            }
+        }
+
+        .accordion {
+
+            .faq-wrapper {
+                box-shadow: 0px 4.4px 12px -1px rgba(19, 16, 34, 0.06), 0px 2px 6.4px -1px rgba(19, 16, 34, 0.03);
+                margin-bottom: 1rem;
+                margin-top: 2rem;
+                border-radius: 0.5em;
+                
+            }
+
+            .faq {
+                background-color: var(--color-bg);
+                color: var(--color-text-heading);
+                font-weight: 600;
+                font-size: 1rem;
+                border: none;
+                border-radius: 0.5em;
+                cursor: pointer;
+                padding: 1rem;
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                text-align: left;
+            }
+
+            .panel {
+                padding: 1.5rem;
+                background-color: var(--color-bg);
+                color: var(--color-text-body);
+                font-size: 0.875rem;
+                display: none;
+                overflow: hidden;
+                border-bottom-left-radius: 0.5em;
+                border-bottom-right-radius: 0.5em;
+            }
+
+        }
+
+        .faq:after {
+            content: '';
+            background-image: url(/Images/iconclosed.svg);
+            background-size: 2.25rem;
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            background-repeat: no-repeat;
+            margin-right: 0;
+        }
+          
+        .active:after {
+            content: '';
+            background-image: url(/Images/Component\ 1\ \(1\).svg);
+            background-size: 2,25rem;
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            background-repeat: no-repeat;
+            margin-right: 0;
+        }
+
+        .btn-primary {
+            width: 9rem;
+            margin-top: 3rem;
+            align-self: center;
         }
     }
 }
