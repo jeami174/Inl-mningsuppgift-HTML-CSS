@@ -22,9 +22,11 @@
 
     --color-text-heading: var(--color-gray-900);
     --color-text-body: var(--color-gray-700);
+    --color-text-input: var(--color-gray-500);
 
     --color-white-to-gray: #fff;
     --color-navigation: var(--color-gray-800);
+    --color-border-input: var(--color-gray-400);
     --color-icon-bg: #F3F6FF;
     --color-btn-secondary: var(--color-gray-900);
     --color-clienttitle: var(--color-gray-600);
@@ -915,6 +917,74 @@ a:hover {
 
 /* SECTION FAQ END */
 
+/* SECTION SUBSCRIBE START */
+
+#section-subscribe {
+
+    .card {
+        background-color: var(--color-bg-gray);
+        width: 100%;
+        border-radius: 0.5rem;
+        padding-inline: 1rem;
+        padding-block: 2rem;
+
+        .subscribe {
+            display: flex;
+            column-gap: 1rem;
+
+            .headline-desktop {
+                display: none;
+            }
+    
+            img {
+                width: 78px;
+            }
+        }
+
+        .email {
+            display: flex;
+            position: relative;
+            margin-top: 2rem;
+
+            .btn-primary {
+                border-radius: 0px 0.5em 0.5em 0px;
+                flex-shrink: 0;
+            }
+
+            .input {
+                border: 1px solid var(--color-border-input);
+                border-radius: 0.5em 0px 0px 0.5em;
+                color:var(--color-text-input);
+                padding-left: 3rem;
+                flex-grow: 1;
+                min-width: 0;
+            }
+
+            input::placeholder {
+                color: var(--color-text-input);
+            }
+
+            input:focus {
+                outline: none;
+                border-color: var(--color-border-input); /* Du kan lägga till en valfri border-color om du vill */
+            }
+
+            .input-icon {
+                position: absolute;
+                width: 1.125rem;
+                top: 50%;
+                left: 1rem;
+                transform: translateY(-50%);
+            }
+        }
+
+        
+    }
+
+}
+
+/* SECTION SUBSCRIBE END */
+
 
 
 footer {
@@ -934,43 +1004,6 @@ footer .container {
         .credit {
                 display: none;
                 }
-}
-
-
-#section-subscribe {
-
-    .card {
-        background-color: var(--color-bg-gray);
-        width: 100%;
-    }
-
-    .headline-desktop {
-        display: none;
-    }
-
-    .form-input {
-        font-size: 1rem;
-        padding: 0.6em;
-        border-radius: 0.5em;
-        border: 1px solid #D4D7E5;
-
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 5px #565973 ;
-        }
-    }
-
-    input::placeholder  {
-        font-size: 1rem;
-        color: #B4B7C9;
-    }
-
-    .row {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-    }
-
 }
 
 /* Här börjar mina media-queries */
@@ -1158,12 +1191,7 @@ footer .container {
 
             }
         }
-    }
-
-    #section-subscribe .card {
-        display: flex;
-        flex-direction: row;
-    }    
+    } 
 }
 
 /*Media-queries för Desktop */
