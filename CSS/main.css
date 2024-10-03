@@ -19,17 +19,20 @@
 
     --color-bg: var(--color-white);
     --color-bg-gray: var(--color-gray-100);
+    --color-bg-card: var(--color-white);
+    --color-bg-input: var(--color-white);
 
     --color-text-heading: var(--color-gray-900);
     --color-text-body: var(--color-gray-700);
+    --color-text-body-light: var(--color-gray-600);
     --color-text-input: var(--color-gray-500);
 
     --color-white-to-gray: #fff;
     --color-navigation: var(--color-gray-800);
+    --color-border: var(--color-gray-300);
     --color-border-input: var(--color-gray-400);
     --color-icon-bg: #F3F6FF;
     --color-btn-secondary: var(--color-gray-900);
-    --color-clienttitle: var(--color-gray-600);
     
     --transition-time: all 0.2s;
 }
@@ -37,10 +40,16 @@
 .dark {
     --color-bg: var(--color-gray-900);
     --color-bg-gray: rgba(255, 255, 255, 0.04);
+    --color-bg-card: rgba(255, 255, 255, 0.04);
+    --color-bg-input: rgba(255, 255, 255, 0.02);
     --color-white-to-gray: rgba(255, 255, 255, 0.05);
     --color-text-body:  rgba(255, 255, 255, 0.7);
+    --color-text-body-light: rgba(255, 255, 255, 0.5);
+    --color-text-input: rgba(255, 255, 255, 0.4);
     --color-text-heading: var(--color-white);
     --color-navigation: var(--color-white);
+    --color-border: rgba(255, 255, 255, 0.15);
+    --color-border-input: rgba(255, 255, 255, 0.18);
     --color-icon-bg: rgba(99, 101, 241, 0.08);
     --color-btn-secondary: var(--color-gray-100);
     --color-clienttitle: var(--color-white);
@@ -333,7 +342,7 @@ a:hover {
     z-index: 10000;
 
     p {
-        color: var(--color-text-body);
+        color: var(--color-gray-700);
         font-weight: 600;
     }
 }
@@ -487,7 +496,7 @@ a:hover {
     background-color: var(--color-bg);
 
     .brand-box {
-        border: 1px solid var(--color-gray-300);
+        border: 1px solid var(--color-border);
         border-radius: 8px;
         height: 100px;
         width: 196px;
@@ -752,7 +761,7 @@ a:hover {
     }
 
     .card {
-        background-color: var(--color-bg);
+        background-color: var(--color-bg-card);
         border-radius: 0.5em;
         padding: 1.5rem;
         padding-top: 3rem;
@@ -813,7 +822,7 @@ a:hover {
                 grid-column: 2;
                 grid-row: 2;
                 font-size: 14px;
-                color: var(--color-clienttitle);
+                color: var(--color-text-body-light);
                 margin: 0;
 
             }
@@ -853,11 +862,10 @@ a:hover {
                 margin-bottom: 1rem;
                 margin-top: 2rem;
                 border-radius: 0.5em;
-                
             }
 
             .faq {
-                background-color: var(--color-bg);
+                background-color: var(--color-bg-card);
                 color: var(--color-text-heading);
                 font-weight: 600;
                 font-size: 1rem;
@@ -874,7 +882,7 @@ a:hover {
 
             .panel {
                 padding: 1.5rem;
-                background-color: var(--color-bg);
+                background-color: var(--color-bg-card);
                 color: var(--color-text-body);
                 font-size: 0.875rem;
                 display: none;
@@ -954,6 +962,7 @@ a:hover {
             .input {
                 border: 1px solid var(--color-border-input);
                 border-radius: 0.5em 0px 0px 0.5em;
+                background-color: var(--color-bg-input);
                 color:var(--color-text-input);
                 padding-left: 3rem;
                 padding-block: 0.5rem;
@@ -1148,7 +1157,7 @@ footer .container {
                     display: flex;
                     flex-direction: column;
                     gap: 1rem;
-                    border: 1px solid var(--color-gray-300);
+                    border: 1px solid var(--color-border);
                     border-radius: 0.5rem;
                     width: 100%;
                     padding: 1rem;
@@ -1170,7 +1179,7 @@ footer .container {
                     display: flex;
                     flex-direction: column;
                     gap: 1rem;
-                    border: 1px solid var(--color-gray-300);
+                    border: 1px solid var(--color-border);
                     border-radius: 0.5rem;
                     width: 100%;
                     padding: 1rem;
@@ -1319,7 +1328,7 @@ footer .container {
         padding-bottom: 4rem;
 
         p {
-            color: var(--color-gray-600);
+            color: var(--color-text-body-light);
             text-align: left;
             padding-top: 1rem;       
         }
