@@ -1,0 +1,17 @@
+@use '../Abstract/' as *;
+
+.container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+
+    @include tablet {
+        max-width: 720px;
+    }
+      
+    @include desktop {
+        max-width: 1920px;
+    }
+
+}

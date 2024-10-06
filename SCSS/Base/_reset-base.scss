@@ -1,0 +1,37 @@
+@charset "utf-8";
+@use '../Abstract/' as *;
+
+*, *::after *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) ; /* Stänger av highlight vid tap */
+}
+
+body {
+    font-family: $font-family;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    color: var(--color-text-body);
+}
+
+html {
+    color-scheme: light;
+}
+
+img, svg {
+    display: block;
+    width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+ol, ul {
+    list-style: none;
+}
