@@ -1,0 +1,95 @@
+@use '../Components/' as *;
+@use '../Abstract/' as *;
+@use '../Base/' as *;
+
+#section-clients {
+    display: none;
+    background-color: var(--color-bg-gray);
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+        padding-block: 5em;
+    }
+
+    .container > * {
+        flex: 1;
+    }
+
+    .card {
+        background-color: var(--color-bg-card);
+        border-radius: 0.5em;
+        padding: 1.5rem;
+        padding-top: 3rem;
+        position: relative;
+        box-shadow: 0px 4.4px 12px -1px rgba(19, 16, 34, 0.06), 0px 2px 6.4px -1px rgba(19, 16, 34, 0.03);
+
+        .quote {
+            background-color: var(--color-primary);
+            position: absolute;
+            padding: 0.75rem;
+            border-radius: 0.375em;
+            box-shadow: 0px 8px 18px -8px rgba(99, 102, 241, 0.90);
+            top: -2rem;
+
+            img {
+                width: auto;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            color: var(--color-text-body);
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        img {
+            width: 88px;
+        }
+
+
+        .client {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 1rem;
+            align-items: start;
+
+            .client-icon {
+                grid-column: 1;
+                grid-row: 1 / span 3;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                width: 48px;
+                height: 48px;
+                }
+            }
+
+            h3 {
+                grid-column: 2;
+                grid-row: 1;
+                font-size: 1rem;
+                margin: 0;
+            }
+                          
+            p { 
+                grid-column: 2;
+                grid-row: 2;
+                font-size: 14px;
+                color: var(--color-text-body-light);
+                margin: 0;
+
+            }
+        }        
+    }
+}
+
+@include desktop {
+    #section-clients {
+        display: block;
+    }
+}
+

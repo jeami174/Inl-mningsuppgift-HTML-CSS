@@ -1,0 +1,123 @@
+@use "../Components/" as *;
+@use "../Abstract/" as *;
+@use "../Base/" as *;
+
+#section-how-does-it-work {
+  text-align: center;
+  background-color: var(--color-bg-gray);
+  padding-block: 1rem;
+
+  .workdesktop,
+  .worktablet {
+      display: none;
+  }
+
+  .workimagestablet,
+  .workimagesdesktop {
+      display: flex;
+      justify-content: space-evenly;
+  }
+
+  .h1 {
+      padding-top: 1rem;
+      font-weight: 800;
+      font-size: 28px;
+      }
+
+  .workmobile {
+      padding-bottom: 2rem;
+      
+      .workimagesmobile {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          padding-left: 3rem;
+          padding-right: 3rem;
+      }
+
+      .h4 {
+          margin-bottom: 1rem;
+      }
+
+      p {
+          color: var(--color-text-body);
+      }
+  }
+}
+
+@include tablet {
+
+#section-how-does-it-work .workmobile{
+  display: none;
+}
+
+#section-how-does-it-work {
+  .h1 {
+      padding-top: 1rem;
+      font-weight: 800;
+      font-size: 34px;
+      }
+
+  .worktablet {
+      display: block;
+      padding-bottom: 2rem;
+
+      .workimagestablet {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          padding-left: 3rem;
+          padding-right: 3rem;
+      }
+  }
+
+  .content {
+      max-width: 50ch;
+      margin-inline: auto;
+
+      .h4 {
+          font-size: 23px;
+          margin-bottom: 1rem;
+      }
+
+      p {
+          color: var(--color-text-body);
+      }
+  }
+}
+}
+
+@include desktop {
+  #section-how-does-it-work .worktablet {
+    display: none;
+}
+
+#section-how-does-it-work {
+    .h1 {
+        padding-top: 1.5rem;
+        font-weight: 800;
+        font-size: 2.5rem;
+        }
+
+    .workdesktop {
+        display: block;
+        padding-bottom: 3rem;
+
+        .workimagesdesktop {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+
+        }
+    }
+
+    .content {
+
+        .h4 {
+            font-size: 24px;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--color-text-body);
+        }
+    }
+}
+}

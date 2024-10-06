@@ -1,0 +1,113 @@
+@use '../Components/' as *;
+@use '../Abstract/' as *;
+@use '../Base/' as *;
+
+
+#section-subscribe {
+
+    .card {
+        background-color: var(--color-bg-gray);
+        width: 100%;
+        border-radius: 0.5rem;
+        padding-inline: 1rem;
+        padding-block: 2rem;
+
+        .subscribe {
+            display: flex;
+            column-gap: 1rem;
+
+            .headline-desktop {
+                display: none;
+            }
+    
+            img {
+                width: 78px;
+            }
+        }
+
+        .email {
+            display: flex;
+            position: relative;
+            margin-top: 2rem;
+
+            .btn-primary {
+                border-radius: 0px 0.5em 0.5em 0px;
+                flex-shrink: 0;
+            }
+
+            .input {
+                border: 1px solid var(--color-border-input);
+                border-radius: 0.5em 0px 0px 0.5em;
+                background-color: var(--color-bg-input);
+                color:var(--color-text-input);
+                padding-left: 3rem;
+                padding-block: 0.5rem;
+                flex-grow: 1;
+                min-width: 0;
+            }
+
+            input::placeholder {
+                color: var(--color-text-input);
+            }
+
+            input:focus {
+                outline: none;
+                border-color: var(--color-border-input); /* Du kan lägga till en valfri border-color om du vill */
+            }
+
+            .input-icon {
+                position: absolute;
+                width: 1.125rem;
+                top: 50%;
+                left: 1rem;
+                transform: translateY(-50%);
+            }
+        }
+
+        
+    }
+
+}
+
+@include tablet {
+    #section-subscribe {
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding-block: 4rem;
+            padding-inline: 1.5rem;
+            column-gap: 2rem;
+
+            .email {
+                margin-top: 0;
+                max-width: 50%;
+            }
+
+            .subscribe {
+                column-gap: 2rem;
+            }
+        }
+    }
+}
+
+@include desktop {
+    #section-subscribe {
+        .card {
+            display: flex;
+            padding-block: 4rem;
+            padding-inline: 7rem;
+            column-gap: 1rem;
+
+            .subscribe {
+                .headline-mobile {
+                    display: none;
+                }
+
+                .headline-desktop {
+                    display: block;
+                }
+            }
+        }
+    }
+}

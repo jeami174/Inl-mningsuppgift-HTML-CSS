@@ -1,8 +1,8 @@
 @use './variables' as *;
 
 :root {
-    @each $key, $val in colors {
-        --clr-#{key}: #{$val};
+    @each $key, $val in $colors {
+        --color-#{$key}: #{$val};
     }
 
     --color-bg: var(--color-white);
@@ -47,3 +47,7 @@
 
 .show-light { display:block; }
 .show-dark { display:none; }
+
+html {
+    color-scheme: light;
+}

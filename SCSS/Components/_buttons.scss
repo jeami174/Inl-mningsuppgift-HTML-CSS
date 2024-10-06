@@ -1,0 +1,132 @@
+@use '../Abstract/' as *;
+
+
+
+.btn-primary {
+    font-size: 0.9rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 0.375em; /*Väljer 0.375 enligt bootstrap 5 standard, samt em efter Joakims rekommendation */
+    border: none;
+    padding: 0.6em 1.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-wrap: nowrap;
+    gap: 0.5em;
+}
+
+.btn-primary:hover {
+    background-color: hsl(239, 85%, 70%); /*Lägger in ljusvärde 70% så blir knappen lite ljusare om man hovrar över den */
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: var(--color-btn-secondary);
+    color: var(--color-white);
+    border-radius: 0.5em;
+    padding: 0.5em 1em; /*Väljer 0.5 och 1.0 enligt standard för bootstrap 5 för stora knappar, samt em efter Joakims rekommendation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5em;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.btn-contact {
+    display: flex;
+    background-color: var(--color-white);
+    border:none;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+    align-self: left;
+    text-decoration: none;
+    text-wrap: nowrap;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.btn-mobile {
+    background-color: transparent;
+    border: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 9999;
+}
+
+.btn-cirkel {
+    height: 44px;
+    width: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--color-white-to-gray);
+    color: var(--color-navigation);
+
+    &:hover,
+    &:focus-visible {
+        background-color: hsl(239, 85%, 70%); /*Lägger in ljusvärde 70% så blir knappen lite ljusare om man hovrar över den */
+    }
+}
+
+.toggle {
+    --_w:46px;
+    --_h: 24px;
+
+    width: var(--_w);
+    height: var(--_h);
+    flex-shrink: 0;
+
+    position: relative;
+    display: inline-block;
+    
+    input[type="checkbox"] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        background-color: var(--color-gray-600);
+        border-radius: 100vw;
+        transition: var(--transition-time);
+    }
+
+    .slider::before {
+        position: absolute;
+        content: "";
+        height: calc(100% - 4px);
+        aspect-ratio: 1;
+        left: 2px;
+        bottom: 2px;
+        background-color: var(--color-white);
+        border-radius: 50%;
+        transition: var(--transition-time); 
+    }
+
+    input[type=checkbox]:checked + .slider {
+        background-color: var(--color-primary);
+    }
+    
+    input[type=checkbox]:checked + .slider::before {
+        transform: translateX(22px);
+        background-color: var(--color-white);
+    }
+}

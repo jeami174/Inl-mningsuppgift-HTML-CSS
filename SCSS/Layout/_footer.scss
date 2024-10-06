@@ -1,0 +1,28 @@
+@use '../Components/' as *;
+@use '../Abstract/' as *;
+@use '../Base/' as *;
+
+footer {
+    font-size: 14px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--color-bg);
+    color: var(--color-gray-600);
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+
+        .credit {
+            display:none;
+        }
+    }
+}
+
+@include tablet {
+    .credit {
+        display: block;
+    }
+}

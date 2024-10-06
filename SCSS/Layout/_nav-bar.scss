@@ -1,0 +1,120 @@
+@use '../Components/' as *;
+@use '../Abstract/' as *;
+@use '../Base/' as *;
+
+.main-nav {
+    padding-block: 1rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    
+.container {
+    position: relative;
+}
+
+.container,
+.main-menu {
+    display: flex;
+    align-items: center;
+}
+
+.btn-mobile {
+    display: none;
+    background-color: transparent;
+    border: 0;
+    padding: 0.5rem;
+    padding-right: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 9999;
+}
+
+.main-menu {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 3rem;
+}
+
+.nav-link {
+    color: var(--color-navigation);
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+}
+
+.darkmode-toggle {
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    right: 12rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10000;
+
+    p {
+        color: var(--color-gray-700);
+        font-weight: 600;
+    }
+}
+
+@media (width <= 992px) {
+    .btn-mobile {
+        display: block;
+    }
+
+    .container {
+        position: static;
+    }
+
+    .darkmode-toggle {
+        right: 8rem;
+    }
+
+    .main-menu {
+        position: absolute;
+        top:100%;
+        right: 0;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        padding-block: 2rem;
+        box-shadow: 0 5px 5px #B4B7C9;
+        background-color: var(--color-bg);
+        z-index: 1000;
+    }
+    .nav-link {
+        display: inline-block;
+        padding: 1rem;
+    }
+
+    .hide {
+        display: none;
+    }
+    .btn-mobile[aria-expanded="true"] ~ .main-menu {
+        animation: openMenu 250ms forwards
+    }
+    .btn-mobile[aria-expanded="false"] ~ .main-menu {
+        animation: closeMenu 250ms forwards
+    }
+
+
+}
+
+@media (width < 540px) {
+    .darkmode-toggle {
+        right: 4rem;
+
+        p {
+            display: none;
+        }
+    }
+
+}
+
+}

@@ -1,0 +1,168 @@
+@use '../Components/' as *;
+@use '../Abstract/' as *;
+@use '../Base/' as *;
+
+#section-appfeatures {
+
+padding-block: 1rem;
+background-color: var(--color-bg);
+  
+      .h2 {
+          grid-area: h2;
+          text-align: center;
+  
+          h2 {
+              font-size: 28px;
+              font-weight: 800;
+              color: var(--color-text-heading);
+          }
+      }
+  
+      .content {
+          text-align: center;
+          padding-bottom: 3rem;
+          
+          p {
+              font-size: 18px;
+              color: var(--color-text-body);
+          }
+      }
+  
+      .container-info {
+          padding-bottom: 1rem;
+  
+          .info-box {
+              display: grid;
+              grid-template-columns: auto 1fr;
+              row-gap: 0.75rem;
+              column-gap: 1.5rem;
+              align-items: start;
+  
+              .info-icon {
+                  grid-column: 1;
+                  grid-row: 1 / span 2;
+                  justify-content: center;
+                  align-items: center;
+                  background-color: var(--color-icon-bg);
+                  width: fit-content;
+                  height: fit-content;
+                  padding: 15px;
+                  border-radius: 8px;
+              }
+  
+              h3 {
+                      grid-column: 2;
+                      grid-row: 1;
+                      font-size: 20px;
+                      font-weight: 800;
+                      color: var(--color-text-heading);
+                      margin: 0;
+                      align-self: start;
+                  }
+                                
+              p { 
+                      grid-column: 2;
+                      grid-row: 2;
+                      font-size: 16px;
+                      color: var(--color-text-body);
+                      padding-bottom: 2rem;
+                      line-height: 1.6;
+                      align-self: start;
+                  }
+          }
+      }
+  
+      .images {
+          
+          display: none;
+          position: relative;
+  
+              .img-phone { 
+                  bottom: 0; 
+                  left: 0;
+                  width: auto;
+                  height: auto;
+              }
+  
+              .card {
+                  position: absolute;
+                  left: 20px;
+                  top: 90px;
+                  width: auto;
+                  height: auto;
+              }
+      }
+}
+
+@include tablet {
+  #section-appfeatures .h2 {
+    h2 {
+        font-size: 34px ;
+        }
+    }
+
+#section-appfeatures .container-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row: auto;
+        column-gap: 2rem;
+        margin-bottom: 5rem;
+}
+
+#section-appfeatures .info-box {
+    row-gap: 2rem;
+    column-gap: 3rem;
+}
+}
+
+@include desktop {
+  #section-appfeatures .container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    margin-bottom: 6rem;
+}
+
+#section-appfeatures .container-info {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    column-gap: 3rem;
+    row-gap: 1rem;
+
+    .info-box {
+    
+        h3 {
+            align-self: center;
+        }
+    }
+}
+
+#section-appfeatures .h2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    h2 {
+            font-size: 40px;
+            text-align: left;
+            margin-bottom: 0;
+        }
+    }
+
+#section-appfeatures .content {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    padding-bottom: 4rem;
+
+    p {
+        color: var(--color-text-body-light);
+        text-align: left;
+        padding-top: 1rem;       
+    }
+}
+
+#section-appfeatures .images {
+    display: block;
+    grid-column: 1;
+    grid-row: 1 / span 4;
+}
+
+}

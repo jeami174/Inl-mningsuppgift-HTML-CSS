@@ -1,0 +1,187 @@
+@use '../Components/' as *;
+@use '../Abstract/' as *;
+@use '../Base/' as *;
+
+#section-faq {
+    padding-block: 2rem;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .h2 {
+            font-size: 25px;
+        }
+
+
+        .contact-card {
+            display: none;
+        }
+
+        .questions {
+            text-align: center;
+
+            p {
+                font-size: 1.125rem;
+                color: var(--color-text-body);
+            }
+        }
+
+        .accordion {
+
+            .faq-wrapper {
+                box-shadow: 0px 4.4px 12px -1px rgba(19, 16, 34, 0.06), 0px 2px 6.4px -1px rgba(19, 16, 34, 0.03);
+                margin-bottom: 1rem;
+                margin-top: 2rem;
+                border-radius: 0.5em;
+            }
+
+            .faq {
+                background-color: var(--color-bg-card);
+                color: var(--color-text-heading);
+                font-weight: 600;
+                font-size: 1rem;
+                border: none;
+                border-radius: 0.5em;
+                cursor: pointer;
+                padding: 1rem;
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                text-align: left;
+            }
+
+            .panel {
+                padding: 1.5rem;
+                background-color: var(--color-bg-card);
+                color: var(--color-text-body);
+                font-size: 0.875rem;
+                display: none;
+                overflow: hidden;
+                border-bottom-left-radius: 0.5em;
+                border-bottom-right-radius: 0.5em;
+            }
+
+        }
+
+        .faq:after {
+            content: '';
+            background-image: url(/Images/iconclosed.svg);
+            background-size: 2.25rem;
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            background-repeat: no-repeat;
+            margin-right: 0;
+        }
+          
+        .active:after {
+            content: '';
+            background-image: url(/Images/Component\ 1\ \(1\).svg);
+            background-size: 2,25rem;
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            background-repeat: no-repeat;
+            margin-right: 0;
+        }
+
+        .btn-primary {
+            width: 9rem;
+            margin-top: 3rem;
+            align-self: center;
+            padding: 1rem;
+        }
+    }
+}
+
+@include tablet {
+    #section-faq {
+        .container {
+
+            .btn-primary {
+                display: none;
+            }
+
+            .contact-card {
+                display: flex;
+                column-gap: 1rem;
+
+                .phone {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    border: 1px solid var(--color-border);
+                    border-radius: 0.5rem;
+                    width: 100%;
+                    padding: 1rem;
+
+                    img {
+                        width: 28px;
+                        flex-shrink: 0;
+                    }
+
+                    p {
+                        font-size: 0.875rem;
+                        color: var(--color-text-body);
+                    }
+
+                    .btn-contact {
+                        background-color: var(--color-bg);
+                    }
+
+        
+                }
+
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    border: 1px solid var(--color-border);
+                    border-radius: 0.5rem;
+                    width: 100%;
+                    padding: 1rem;
+                    
+                    img {
+                        width: 28px;
+                        flex-shrink: 0;
+                    }
+
+                    p {
+                        font-size: 0.875rem;
+                        color: var(--color-text-body);
+                    }
+
+                    .btn-contact {
+                        color: var(--color-success);
+                        background-color: var(--color-bg);
+                    }
+                }
+
+            }
+        }
+    } 
+}
+
+@include desktop {
+    #section-faq {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            column-gap: 7rem;
+            row-gap: 2rem;
+            padding-block: 3rem;
+
+            .accordion {
+                grid-column: 2;
+                grid-row: 1 / span 4;
+            }
+
+            .questions {
+                text-align: left;
+            }
+        }
+    }
+}
+
