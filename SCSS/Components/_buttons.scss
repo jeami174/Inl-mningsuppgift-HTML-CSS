@@ -27,7 +27,7 @@
     background-color: var(--color-btn-secondary);
     color: var(--color-white);
     border-radius: 0.5em;
-    padding: 0.5em 1em; /*Väljer 0.5 och 1.0 enligt standard för bootstrap 5 för stora knappar, samt em efter Joakims rekommendation */
+    padding: 0.5em 1em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +79,7 @@
 
     &:hover,
     &:focus-visible {
-        background-color: hsl(239, 85%, 70%); /*Lägger in ljusvärde 70% så blir knappen lite ljusare om man hovrar över den */
+        background-color: var(--color-primary);
     }
 }
 

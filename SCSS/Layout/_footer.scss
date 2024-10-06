@@ -16,13 +16,13 @@ footer {
         gap: 0.4rem;
 
         .credit {
-            display:none;
+            display: none;
         }
     }
 }
 
-@include tablet {
-    .credit {
+@media (min-width: 768px) {
+    footer .credit {
         display: block;
     }
 }
